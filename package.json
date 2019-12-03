@@ -1,0 +1,22 @@
+{
+  "name": "blog-system",
+  "version": "1.0.0",
+  "description": "xbl的blog前后端",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xblcity/blog-system.git"
+  },
+  "keywords": [
+    "xblcity"
+  ],
+  "author": "xblcity",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xblcity/blog-system/issues"
+  },
+  "homepage": "https://github.com/xblcity/blog-system#readme"
+}
