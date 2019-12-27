@@ -1,14 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-
-class A {
-  s = 1
-}
-console.log(A)
+import styles from './index.scss'
 
 const render = () => {
   ReactDOM.render(
-    <div>123</div>,
+    <div className={styles.test}>123</div>,
     document.querySelector('#app')
   )
 }

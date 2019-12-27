@@ -9,7 +9,7 @@ module.exports = [
         loader: 'babel-loader',
         options: {
           babelrc: false,
-          presets: ['@babel/preset-typescript', '@babel/preset-react', '@babel/preset-env'],
+          presets: ['@babel/preset-typescript', '@babel/preset-react'],
           plugins: [
 
           ]

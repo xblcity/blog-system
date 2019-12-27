@@ -1,6 +1,7 @@
 const { resolve } = require('./utils')
 const jsRules = require('./rules/jsRules')
 const plugins = require('./plugins')
+const styleRules = require('./rules/styleRules')
 
 /**
  * @type {import('webpack').Configuration}
@@ -8,7 +9,7 @@ const plugins = require('./plugins')
 
 module.exports = {
   entry: {
-    app: resolve('src/index.jsx')
+    app: resolve('src/index.tsx')
   },
   output: {
     path: resolve('dist'),
@@ -16,7 +17,7 @@ module.exports = {
   },
   mode: 'development',
   module: {
-    rules: [...jsRules]
+    rules: [...jsRules, ...styleRules]
   },
   plugins: [...plugins]
 }

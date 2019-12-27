@@ -4,7 +4,7 @@
 
 ## 构建
 
-安装依赖，
+## 安装初始化依赖，
 
 `webpack相关` `ts相关` `react相关` `react检查` `webpack loader babel相关` ` webpack插件`
 
@@ -24,3 +24,16 @@ npm i -D html-webpack-plugin
 新建src文件并书写入口文件
 
 编写tsconfig.json文件
+
+### 安装样式依赖
+
+sass
+```js
+npm i -D sass-loader node-sass style-loader css-loader
+```
+
+编写`typed-css-modules.d.ts`, 并使用`css-modules-typescript-loader`对sass文件的内容进行校验，并在webpack配置loader对应选项
+
+```js
+npm i -D css-modules-typescript-loader
+```
