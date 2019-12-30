@@ -11,7 +11,7 @@ module.exports = [
           babelrc: false,
           presets: ['@babel/preset-typescript', '@babel/preset-react'],
           plugins: [
-
+            ['import', { libraryName: 'antd', libraryDirectory: 'lib', style: true }]
           ]
         }
       }

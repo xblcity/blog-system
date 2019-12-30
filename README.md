@@ -25,7 +25,7 @@ npm i -D html-webpack-plugin
 
 编写tsconfig.json文件
 
-### 安装样式依赖
+### 安装样式依赖及antd
 
 sass
 ```js
@@ -37,3 +37,11 @@ npm i -D sass-loader node-sass style-loader css-loader
 ```js
 npm i -D css-modules-typescript-loader
 ```
+
+antd配置样式以及按需加载 [官方说明](https://ant.design/docs/react/getting-started-cn#%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD)
+
+```js
+npm i -D babel-plugin-import less less-loader
+```
+
+样式配置成功后，需要重新启动
