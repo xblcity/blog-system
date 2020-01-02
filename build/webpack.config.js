@@ -16,6 +16,17 @@ module.exports = {
     filename: '[name].js'
   },
   mode: 'development',
+  devtool: 'inline-source-map',
+  devServer: {
+    historyApiFallback: true
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+    alias: {
+      '@views': resolve('src/containers/views'),
+      '@shared': resolve('src/containers/shared')
+    }
+  },
   module: {
     rules: [...jsRules, ...styleRules]
   },

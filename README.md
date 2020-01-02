@@ -25,7 +25,7 @@ npm i -D html-webpack-plugin
 
 编写tsconfig.json文件
 
-### 安装样式依赖及antd
+## 安装样式依赖及antd
 
 sass
 ```js
@@ -45,3 +45,21 @@ npm i -D babel-plugin-import less less-loader
 ```
 
 样式配置成功后，需要重新启动
+
+## 优化
+
+在webpack以及tsconfig配置alias别名
+
+配置sourceMap
+
+使用cache-loader来做缓存，thread-loader来做构建加速
+
+```js
+npm i -D cache-loader thread-loader
+```
+
+## 搭建路由和状态管理
+
+安装`@babel/plugin-syntax-dynamic-import`，使其支持异步import语法,`React.lazy()`要用到
+
+并使用`react-router-dom`配置路由
