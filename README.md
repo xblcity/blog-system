@@ -60,6 +60,14 @@ npm i -D cache-loader thread-loader
 
 ## 搭建路由和状态管理
 
+### 搭建路由
+
 安装`@babel/plugin-syntax-dynamic-import`，使其支持异步import语法,`React.lazy()`要用到
 
 并使用`react-router-dom`配置路由
+
+通过`Suspense`与`React.lazy()`可以实现动态加载
+
+### 状态管理
+
+使用 `useContext`, `createContext`, `useReducer`

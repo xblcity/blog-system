@@ -6,13 +6,13 @@ import routerMap from './routerMap'
 
 const App = () => {
     return (
-        <Suspense  fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading...</div>}>
             <Router>
                 <Switch>
                     {
                         routerMap.map(item => {
                             return (
-                                <Route exact={true} key={item.path} path={item.path} component={item.component} />
+                                <Route exact={true} key={item.path} path={item.path} component={item.component}/>
                             )
                         })
                     }
@@ -22,4 +22,4 @@ const App = () => {
     )
 }
 
-export default  App
+export default App

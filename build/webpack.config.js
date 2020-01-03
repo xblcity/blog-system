@@ -24,7 +24,9 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
     alias: {
       '@views': resolve('src/containers/views'),
-      '@shared': resolve('src/containers/shared')
+      '@shared': resolve('src/containers/shared'),
+      '@store': resolve('src/store'),
+      '@component': resolve('src/components')
     }
   },
   module: {
