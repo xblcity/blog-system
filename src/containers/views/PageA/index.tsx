@@ -10,7 +10,13 @@ const PageA = ({ history }: RouteComponentProps) => {
       <div>PageA</div>
       <ShowCount />
       <CountOperation />
-      <Button onClick={() => { history.push('/page-b') }}>跳转B</Button>
+      <Button
+        onClick={() => {
+          history.push('/page-b')
+        }}
+      >
+        跳转B
+      </Button>
     </div>
   )
 }
