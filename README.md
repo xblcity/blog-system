@@ -90,3 +90,28 @@ npm i -D @types/qs
 ```
 
 配置axios拦截器
+
+## webpack打包配置
+
+对打包的css文件进行分离
+```js
+npm i -D mini-css-extract-plugin
+```
+
+对js代码进行压缩
+
+```js
+npm i -D terser-webpack-plugin
+```
+
+对css代码进行压缩
+
+```js
+npm i -D optimize-css-assets-webpack-plugin
+```
+
+使用 `cross-env` 配置环境变量
+
+```js
+npm i -D cross-env
+```

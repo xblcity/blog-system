@@ -2,7 +2,7 @@ import { message } from 'antd'
 import axios, { AxiosRequestConfig } from 'axios'
 import qs from 'qs'
 
-const baseURL = 'http://1.1.1.1：8080'
+const baseURL = process.env.NODE_ENV ? 'http://1.1.1.1:8080' : 'http://12.com'
 
 type Request = (url: string, data: object) => Promise<any>
 
