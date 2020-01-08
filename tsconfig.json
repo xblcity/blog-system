@@ -55,6 +55,9 @@
       "@views/*": [
         "containers/views/*"
       ],
+      "@components/*": [
+        "components/*"
+      ],
       "@constants/*": [
         "constants/*"
       ],

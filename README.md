@@ -8,7 +8,15 @@
 
 `webpack相关` `ts相关` `react相关` `react检查` `webpack loader babel相关` ` webpack插件`
 
-备注：是否安装 `@babel/preset-env`(preset) `@babel/plugin-proposal-class-properties`(静态属性) `@babel/plugin-proposal-decorators`(修饰器) `@babel/plugin-syntax-dynamic-import`(异步加载) `babel-plugin-import`(按需加载) 有待商榷
+是否安装 `@babel/preset-env`(preset) 
+
+`@babel/plugin-proposal-class-properties`(静态属性) 
+
+`@babel/plugin-proposal-decorators`(修饰器) 
+
+`@babel/plugin-syntax-dynamic-import`(异步加载) React.lazy使用到
+
+`babel-plugin-import`(按需加载) antd使用
 
 ```js
 npm install-D webpack webpack-cli webpack-dev-server
@@ -70,4 +78,15 @@ npm i -D cache-loader thread-loader
 
 ### 状态管理
 
-使用 `useContext`, `createContext`, `useReducer`
+使用 `useContext`, `createContext`, `useReducer` 并添加类型检查
+
+## 配置axios
+
+```js
+npm i -S axios
+// 安装查询参数的库
+npm i -S qs 
+npm i -D @types/qs
+```
+
+配置axios拦截器
