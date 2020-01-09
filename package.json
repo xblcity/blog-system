@@ -8,12 +8,6 @@
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.config.js",
     "lint": "eslint src --ext .ts,.tsx && stylelint \".src/**/*.scss\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xblcity/blog-system.git"

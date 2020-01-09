@@ -4,5 +4,5 @@ module.exports = {
   printWidth: 30,
   tabWidth: 2,
   stylelintIntegration: true,
-  proseWrap: never
+//   proseWrap: never
 }
