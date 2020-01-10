@@ -1,5 +1,6 @@
 import { Context } from 'koa'
 import { getManager } from 'typeorm'
+
 import User from '../entity/user'
 
 class TestController {

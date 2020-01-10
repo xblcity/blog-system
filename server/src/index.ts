@@ -9,7 +9,6 @@ import { AppRoutes } from './routers'
 createConnection()
   .then(() => {
     const app = new Koa()
-
     const router = new Router()
 
     // 注册路由

@@ -55,3 +55,46 @@ npm i -S typeorm mysql2
 ## ts编译成js
 
 tsconfig设置输出目录 ， 执行`tsc`命令(typescript自带的)
+
+
+## 安装其他依赖
+
+目前已安装依赖
+
+```js
+// dependencies
+koa
+koa2-cors
+koa-bodyparser
+koa-router
+mysql2
+typeorm
+// devDependencies
+@types/koa
+@types/koa2-cors
+@types/koa-bodyparser
+@types/koa-router
+typescript
+```
+
+仍需安装
+
+```js
+// dependencies
+bcrypt // windows使用bcryptjs
+jsonwebtoken
+// koa-jwt
+lodash
+// devDependencies
+@types/bcrypt  // windows使用 @types/bcryptjs
+@types/jsonwebtoken
+@types/lodash
+@typescript-eslint/eslint-plugin
+@typescript-eslint/parser
+eslint
+eslint-config-prettier
+eslint-plugin-prettier
+prettier
+ts-node
+```
+
