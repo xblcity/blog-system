@@ -7,5 +7,5 @@ export interface Item extends IBase.Item {
   // 权限
   auth: 1 | 2
   // 对应评论
-  comments: IComment.Item[]
+  comments: IComment.Item[] // comments类型是个数组，每个元素的类型符合IComment.Item
 }
