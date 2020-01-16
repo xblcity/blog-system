@@ -27,7 +27,7 @@ module.exports = {
     '@typescript-eslint/interface-name-prefix': 'off',
     '@typescript-eslint/explicit-member-accessibility': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    'function-paren-newline': 'multiline' // 函数参数换行
+    'function-paren-newline': ['error', 'multiline'] // 函数参数换行
   },
   settings: {
     // 让eslint自动检测react版本

@@ -138,6 +138,10 @@ js 代码规范 eslint 以及 prettier
 npm i -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier
 ```
 
+如果 eslint 没有生效，看一下编辑器输出，本人提示的是未安装`eslint-plugin-html`，安装之后，eslint 正常使用，且可以配合 prettier 保存代码自动修复
+
+eslint 命令行修复 `eslint --fix --ext .ts src/` ext 表示指定 js 类型文件
+
 css 代码规范与格式化
 
 ```js

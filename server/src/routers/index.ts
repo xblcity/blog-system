@@ -5,11 +5,11 @@ import {
   ArticleController,
   TagController,
   CommentController,
-  ReplyController,
+  ReplyController
 } from '../controller'
 
 export interface RouteItem {
-  path: string,
+  path: string
   method: 'get' | 'post' | 'put' | 'delete'
   action: any
 }

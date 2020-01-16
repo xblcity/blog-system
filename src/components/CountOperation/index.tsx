@@ -7,8 +7,16 @@ const CountOperation = () => {
   const { dispatch } = useTestStore()
   return (
     <div>
-      <Button onClick={() => dispatch({ type: 'INCREMENT', payload: { num: 5 } })}>+</Button>
-      <Button onClick={() => dispatch({ type: 'DECREMENT', payload: { num: 1 } })}>-</Button>
+      <Button
+        onClick={() => dispatch({ type: 'INCREMENT', payload: { num: 5 } })}
+      >
+        +
+      </Button>
+      <Button
+        onClick={() => dispatch({ type: 'DECREMENT', payload: { num: 1 } })}
+      >
+        -
+      </Button>
     </div>
   )
 }

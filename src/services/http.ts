@@ -7,9 +7,9 @@ const baseURL = process.env.NODE_ENV ? 'http://1.1.1.1:8080' : 'http://12.com'
 type Request = (url: string, data: object) => Promise<any>
 
 interface HttpRequest {
-  get?: Request,
-  post?: Request,
-  delete?: Request,
+  get?: Request
+  post?: Request
+  delete?: Request
   put?: Request
 }
 
@@ -56,7 +56,8 @@ methods.forEach(v => {
     } else {
       config.data = qs.stringify(data)
     }
-    return instance.request(config)
+    return instance
+      .request(config)
       .then(res => {
         return res
       })
