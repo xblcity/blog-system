@@ -16,7 +16,7 @@ export interface AuthItem {
 const verifyList: VerifyListItem[] = [
   {
     regexp: /\/article/,
-    required: 'post put delete',
+    required: 'post put delete'
   },
   {
     regexp: /\/user/,
@@ -57,4 +57,3 @@ const checkAuthFun = async (ctx: Context, next: () => Promise<any>) => {
 }
 
 export default checkAuthFun
-

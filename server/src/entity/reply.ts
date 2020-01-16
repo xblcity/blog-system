@@ -1,8 +1,8 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
-import BaseEntity from "./base";
-import { User, Comment } from "./index";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm'
+import BaseEntity from './base'
+import { User, Comment } from './index'
 
-// 使用基类，createAt updateAt 
+// 使用基类，createAt updateAt
 @Entity()
 class Reply extends BaseEntity implements IReply.Item {
   @PrimaryGeneratedColumn()

@@ -112,6 +112,13 @@ const UserController = {
         current: Number(page)
       }
     }
+  },
+  // 删除用户
+  async deleteUserById(ctx: Context) {
+    const { id } = ctx.query
+    const userRepository = getManager().getRepository(User)
+    await userRepository.delete({ id })
+    ctx.body = { code: 200, message: '删除成功' }
   }
 }
 

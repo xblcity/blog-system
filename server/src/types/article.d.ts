@@ -1,7 +1,6 @@
 export as namespace IArticle
 
-export interface Item
-  extends IBase.Item {
+export interface Item extends IBase.Item {
   id: number
   content: string
   title: string

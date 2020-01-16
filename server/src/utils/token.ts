@@ -14,7 +14,9 @@ interface UserInfo {
 
 // 创建token
 export const createToken = (userInfo: UserInfo) => {
-  const token = jwt.sign(userInfo, TOKEN_SECRET_KEY, { expiresIn: TOKEN_EXPIRESIN })
+  const token = jwt.sign(userInfo, TOKEN_SECRET_KEY, {
+    expiresIn: TOKEN_EXPIRESIN
+  })
   return token
 }
 
@@ -22,14 +24,19 @@ export const createToken = (userInfo: UserInfo) => {
 export const checkToken = (ctx: Context, authList: AuthItem[]): boolean => {
   let isPass = false
   const verify = (token: string): any => {
-    return jwt.verify(token, TOKEN_SECRET_KEY, (err: Error, decoded: string | object) => {
-      if (err) {
-        return false
-      } else if (!!decoded) {
-        const target = authList.find((item: AuthItem) => item.auth === (decoded as { auth: 1 | 2 }).auth)
-        return !!target
+    return jwt.verify(
+      token,
+      TOKEN_SECRET_KEY,
+      (err: Error, decoded: string | object) => {
+        if (err) {
+          return false
+        } else if (!!decoded) {
+          // eslint-disable-next-line prettier/prettier
+          const target = authList.find((item: AuthItem) => item.auth === (decoded as { auth: 1 | 2 }).auth)
+          return !!target
+        }
       }
-    })
+    )
   }
 
   for (const item of authList) {

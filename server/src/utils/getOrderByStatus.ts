@@ -3,7 +3,11 @@ interface OrderStatus {
   sortType: 'DESC' | 'ASC'
 }
 
-export const getOrderByStatus = (dataName: string, sortName: string, sortType: 'DESC' | 'ASC'): OrderStatus => {
+export const getOrderByStatus = (
+  dataName: string,
+  sortName: string,
+  sortType: 'DESC' | 'ASC'
+): OrderStatus => {
   const orderByStatus: OrderStatus = {
     sortName: `${dataName}.${sortName}`,
     sortType: 'DESC'

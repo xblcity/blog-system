@@ -14,7 +14,8 @@ createConnection()
     // 注册路由
     AppRoutes.forEach(route => router[route.method](route.path, route.action))
 
-    app.use(cors())
+    app
+      .use(cors())
       .use(bodyParser())
       .use(router.routes())
 

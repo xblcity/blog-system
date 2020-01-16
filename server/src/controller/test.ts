@@ -7,6 +7,7 @@ class TestController {
   async test(ctx: Context) {
     ctx.body = { data: '你好' }
   }
+
   // 注册
   async register(ctx: Context) {
     const { username, password } = ctx.request.body
@@ -14,6 +15,7 @@ class TestController {
     await userRepository.save({ username, password })
     ctx.body = { message: '注册成功' }
   }
+
   // 登录
   async login(ctx: Context) {
     const { username, password } = ctx.request.body
