@@ -124,6 +124,16 @@ npm i -D cross-env
 
 js 代码规范 eslint 以及 prettier
 
+- eslint 也可以进行 ts 的代码校验，并且性能更高。
+
+- eslint-config-prettier,解决 ESLint 中的样式规范和 prettier 中样式规范的冲突，以 prettier 的样式规范为准，使 ESLint 中的样式规范自动失效
+
+- eslint-plugin-prettier：将 prettier 作为 ESLint 规范来使用
+
+- eslint-plugin-react: 校验 react 的代码
+
+更多可以参考 [在 Typescript 项目中，如何优雅的使用 ESLint 和 Prettier](https://juejin.im/post/5d1d5fe96fb9a07eaf2bae29)
+
 ```js
 npm i -D eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react @typescript-eslint/eslint-plugin @typescript-eslint/parser prettier
 ```

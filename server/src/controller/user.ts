@@ -13,11 +13,13 @@ const UserController = {
     // Repository与Manger类似，但是Repository把操作限制在了某一具体的entity中
     // 以下等同于 getConnection().getRepository() or getRepository() 需要先引入, 参考 https://typeorm.io/#/working-with-repository
     const userRepository = getManager().getRepository(User)
-    if (!!username && !!password) { // 两个参数都存在
+    if (!!username && !!password) {
+      // 两个参数都存在
       // 检测user是否存在
       const checkUser = await userRepository.findOne({ username })
       let res
-      if (!!checkUser) { // 用户被查找到，说明已注册
+      if (!!checkUser) {
+        // 用户被查找到，说明已注册
         ctx.throw(400, '用户已被注册') // ctx.body结构。。？
       } else {
         const saltPassword = await encrypt(password) // 对密码进行加密
@@ -30,7 +32,9 @@ const UserController = {
         })
         // user表插入这条数据
         await userRepository.save(newUser)
-        res = { message: '注册成功' }
+        res = {
+          message: '注册成功'
+        }
       }
       // http请求返回的内容
       ctx.body = res
@@ -51,7 +55,8 @@ const UserController = {
     } else {
       // 对传入密码与数据库保存密码进行对比
       const isMath = await comparePassword(password, user.password)
-      if (!isMath) { // 密码不匹配
+      if (!isMath) {
+        // 密码不匹配
         ctx.throw(400, '用户不存在')
       } else {
         const { id, auth } = user
@@ -64,7 +69,10 @@ const UserController = {
           token,
           id
         }
-        res = { message: '登录成功', data }
+        res = {
+          message: '登录成功',
+          data
+        }
       }
     }
     ctx.body = res
@@ -72,13 +80,19 @@ const UserController = {
 
   // 获取用户列表
   async getList(ctx: Context) {
-    const { page = 1, pageSize = 10, sortName = 'createAt', sortType, keyword } = ctx.query
+    const {
+      page = 1,
+      pageSize = 10,
+      sortName = 'createAt',
+      sortType,
+      keyword
+    } = ctx.query
     const userRepository = getManager().getRepository(User)
     // 该方法处理传入三个参数，返回一个对象，包含sortName以及sortType
     const orderByStatus = getOrderByStatus('user', sortName, sortType)
     // 数据库相关操作
     const users = await userRepository
-      .createQueryBuilder('user')  // Creates a query builder use to build SQL queries. 后面可以直接使用user
+      .createQueryBuilder('user') // Creates a query builder use to build SQL queries. 后面可以直接使用user
       .skip(pageSize * (page - 1)) // 分页，跳过前  pageSize * (page - 1) 个数据
       .take(pageSize) // 取的数量
       .select(['user.auth', 'user.id', 'user.createAt']) // select only some entity properties
@@ -86,7 +100,9 @@ const UserController = {
       .orderBy({
         [orderByStatus.sortName]: orderByStatus.sortType // 排序方式
       })
-      .where('user.username like :username', { username: `%${!!keyword ? keyword : ''}` }) // username变量在后面参数中表示,like是SQL中的语法，进行模糊匹配
+      .where('user.username like :username', {
+        username: `%${!!keyword ? keyword : ''}`
+      }) // username变量在后面参数中表示,like是SQL中的语法，进行模糊匹配
       .andWhere('user.auth like :auth', { auth: 1 }) // auth 1 普通用户
       .getManyAndCount() // getMany取得results, count取得总数
     ctx.body = {
