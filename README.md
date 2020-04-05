@@ -1,6 +1,8 @@
 # blog-system
 
-使用 react 与 node 构建博客系统的前后端
+使用 react 与 node 构建博客系统的前后端, [参考](https://github.com/hungeroxc/oxc-blog)
+
+后端的代码在`/server`文件夹下，对应的构建及配置也在该目录的`README.md`中
 
 > 前端部分
 

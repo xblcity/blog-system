@@ -21,9 +21,7 @@ module.exports = [
       {
         loader: 'sass-loader',
         options: {
-          includePaths: [
-            resolve('src/styles')
-          ]
+          includePaths: [resolve('src/styles')]
         }
       }
     ]

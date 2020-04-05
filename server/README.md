@@ -1,6 +1,23 @@
 # blog 后端构建
 
+[参考](https://github.com/hungeroxc/oxc-blog-server)
+
+后端并不需要使用webpack进行配置，`ts`文件转换为`js`主要利用了`typescript`的`tsc`命令
+
+- 语言: ts
+- 框架: koa2, koa2-router, 安装koa2-cors处理跨域, koa-bodyparser处理post请求体
+- 数据库 mysql，操作工具: workbench
+- ORM工具: typeORM
+- 监听文件变化: nodemon
+- 服务器部署：nginx, pm2
+
+项目原始文件在`src`目录。经过ts编译后的js文件在`dist`目录，我们部署到服务器上的也是`dist`文件下的文件
+
 ## 项目初始以及 koa 使用
+
+全局安装`typescript`以便使用`tsc`命令
+
+项目安装
 
 ```js
 npm i -S koa @types/koa
