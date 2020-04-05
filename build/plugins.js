@@ -4,7 +4,7 @@ const DefinePlugin = require('webpack').DefinePlugin
 
 module.exports = [
   new HtmlWebpackPlugin({
-    template: 'build/tpl/index.html'  // 注意路径绝对路径
+    template: 'build/tpl/index.html' // 注意路径绝对路径
   }),
   new MiniCssExtractPlugin({
     filename: '[name].[contenthash].css',
