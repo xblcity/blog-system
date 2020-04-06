@@ -24,7 +24,7 @@ module.exports = {
         test: /[\\/]node_modules[\\/](moment|axios)[\\/]/,
         chunks: 'all',
         priority: 10
-      },
+      }
     }
   },
   minimizer: [
