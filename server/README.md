@@ -54,7 +54,7 @@ npm i -D @types/koa-bodyparser
 
 ## 数据库的使用
 
-**电脑上需要安装`mysql`以及`workbench`**
+**电脑上需要安装`mysql`以及`workbench`**，window用户可以参考这篇 [mysql安装](https://github.com/xblcity/blog/blob/master/backend/mysql.md)
 
 使用 `TypeORM` 进行对象关系映射, 还需要安装 `typeorm` 与 `mysql` 之间进行连接的连接器 `mysql2`
 

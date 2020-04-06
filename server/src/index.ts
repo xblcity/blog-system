@@ -4,7 +4,7 @@ import cors from 'koa2-cors'
 import bodyParser from 'koa-bodyparser'
 import { createConnection } from 'typeorm'
 
-import { AppRoutes } from './routers'
+import { AppRoutes } from './routes'
 
 createConnection()
   .then(() => {
