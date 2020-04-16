@@ -1,16 +1,14 @@
+/* eslint-disable prettier/prettier */
 import { lazy } from 'react'
 
-const PageA = lazy(() => import(/*webpackChunkName: 'pag-a'*/ '@views/PageA'))
-const PageB = lazy(() => import(/*webpackChunkName: 'pag-b'*/ '@views/PageB'))
+const ArticleList = lazy(() =>
+  import(/* webpackChunkName: "article-list" */ '@views/ArticleList'))
 
 const routerMap = [
   {
     path: '/',
-    component: PageA
-  },
-  {
-    path: '/page-b',
-    component: PageB
+    title: '首页',
+    component: ArticleList
   }
 ]
 
