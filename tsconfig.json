@@ -53,7 +53,7 @@
       // "@constants/*": ["constants/*"],
       // "@views/*": ["containers/views/*"]
       "@views/*": [
-        "containers/views/*"
+        "views/*"
       ],
       "@components/*": [
         "components/*"
@@ -63,9 +63,6 @@
       ],
       "@services/*": [
         "services/*"
-      ],
-      "@shared/*": [
-        "containers/shared/*"
       ],
       "@store/*": [
         "store/*"

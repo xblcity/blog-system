@@ -4,23 +4,11 @@
 
 后端的代码在`/server`文件夹下，对应的构建及配置也在该目录的`README.md`中
 
-> 前端部分
-
 ## 构建
 
 ## 安装初始化依赖，
 
 `webpack相关` `ts相关` `react相关` `react检查` `webpack loader babel相关` `webpack插件`
-
-是否安装 `@babel/preset-env`(preset)
-
-`@babel/plugin-proposal-class-properties`(静态属性)
-
-`@babel/plugin-proposal-decorators`(修饰器)
-
-`@babel/plugin-syntax-dynamic-import`(异步加载) React.lazy 使用到
-
-`babel-plugin-import`(按需加载) antd 使用
 
 ```js
 npm install-D webpack webpack-cli webpack-dev-server
@@ -30,6 +18,11 @@ npm i -D @types/react-router-dom @types/react-dom @types/react
 npm i -D @babel/core babel-loader @babel/preset-react @babel/preset-typescript
 npm i -D html-webpack-plugin
 ```
+> 后面可能会安装的插件
+> `@babel/plugin-proposal-class-properties`(静态属性, class组件用)
+> `@babel/plugin-proposal-decorators`(修饰器, class组件用)
+> `@babel/plugin-syntax-dynamic-import`(异步加载) React.lazy 使用到
+> `babel-plugin-import`(按需加载) antd 使用
 
 新建 webpack 配置文件
 
@@ -44,6 +37,8 @@ sass
 ```js
 npm i -D sass-loader node-sass style-loader css-loader
 ```
+
+如果不翻墙的话，安装node-sass设置一下`.npmrc`配置node-sass安装源
 
 编写`typed-css-modules.d.ts`, 并使用`css-modules-typescript-loader`对 sass 文件的内容进行校验，并在 webpack 配置 loader 对应选项
 

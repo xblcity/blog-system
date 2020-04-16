@@ -117,6 +117,8 @@ prettier
 ts-node
 ```
 
+默认运行在3001端口
+
 ## 参考
 
 - [oxc-blog-server](https://github.com/hungeroxc/oxc-blog-server)
