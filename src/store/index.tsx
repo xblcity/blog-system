@@ -1,10 +1,12 @@
 import React from 'react'
 
-import { Provider as TestProvider } from './count'
+import { Provider as UserProvider } from './user'
+import { Provider as TagProvider } from './tag'
 
-export { useTestStore } from './count'
+export { useUserStore } from './user'
+export { useTagStore } from './tag'
 
-const providers = [TestProvider]
+const providers = [UserProvider, TagProvider]
 
 const Provider = (props: any) =>
   providers.reduceRight(
