@@ -1,0 +1,19 @@
+{
+    "restartable": "rs",
+    "verbose": true,
+    "execMap": {
+        "ts": "ts-node"
+    },
+    "ignore": ["**/*.test.ts", ".git", "node_modules"],
+    "watch": ["src"],
+    "env": {
+        "TS_NODE_FILES": "true",
+        "TS_NODE_PROJECT": "./tsconfig.json",
+        "APP_ENV": "dev",
+        "NODE_ENV": "qa",
+        "DBNAME": "blogsystem",
+        "DBACCOUNT": "root",
+        "DBPASSWORD": "123456"
+    },
+    "ext": "js,json,ts"
+}

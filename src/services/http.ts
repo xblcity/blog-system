@@ -2,37 +2,42 @@ import { message } from 'antd'
 import axios, { AxiosRequestConfig } from 'axios'
 import qs from 'qs'
 
-const baseURL = process.env.NODE_ENV ? 'http://1.1.1.1:8080' : 'http://12.com'
+import { baseUrls } from '@constants/index'
 
-type Request = (url: string, data: object) => Promise<any>
+type Request = (url: string, data?: object, baseUrl?: string) => Promise<any>
 
 interface HttpRequest {
-  get?: Request,
-  post?: Request,
-  delete?: Request,
+  get?: Request
+  post?: Request
+  delete?: Request
   put?: Request
 }
 
 type Method = 'get' | 'post' | 'delete' | 'put'
-
 const methods: Method[] = ['get', 'post', 'delete', 'put']
-
 const http: HttpRequest = {}
+const appEnv: string = process.env.NODE_ENV
+
+const DEFAULTBASEURL = {
+  baseURL: baseUrls[appEnv].BASE_URL
+}
 
 methods.forEach(v => {
-  http[v] = (url: string, data: any) => {
+  http[v] = (url: string, data: any, baseUrl?: string) => {
     const config: AxiosRequestConfig = {
       url,
       method: v,
-      baseURL
+      baseURL: baseUrl || DEFAULTBASEURL.baseURL
     }
-    const instance = axios.create({
-      baseURL
-    })
+    const instance = axios.create(DEFAULTBASEURL)
     // 请求拦截器
     instance.interceptors.request.use(
       config => {
         // 可以子啊这这添加请求头
+        const token = localStorage.getItem('token')
+        if (!!token) {
+          config.headers.common['Authorization'] = 'Bearer ' + token
+        }
         return config
       },
       err => {
@@ -56,7 +61,8 @@ methods.forEach(v => {
     } else {
       config.data = qs.stringify(data)
     }
-    return instance.request(config)
+    return instance
+      .request(config)
       .then(res => {
         return res
       })

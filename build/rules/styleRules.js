@@ -14,16 +14,14 @@ module.exports = [
         loader: 'css-loader',
         options: {
           modules: {
-            localIdentName: '[path][name]__[local]--[hash:base64:5]'
+            localIdentName: '[local]_[hash:base64:5]'
           }
         }
       },
       {
         loader: 'sass-loader',
         options: {
-          includePaths: [
-            resolve('src/styles')
-          ]
+          includePaths: [resolve('src/styles')]
         }
       }
     ]

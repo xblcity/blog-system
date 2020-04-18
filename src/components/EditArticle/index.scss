@@ -1,0 +1,52 @@
+.editArticle {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 0;
+
+  .editor {
+    flex: 1;
+    height: 0;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    width: 50px;
+  }
+
+  .header {
+    margin-bottom: 15px;
+
+    .setInfo {
+      display: flex;
+      margin-bottom: 10px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .titleInput {
+        width: 300px;
+      }
+    }
+  }
+
+  .tags {
+    display: flex;
+    margin-bottom: 15px;
+
+    :global {
+      .ant-tag {
+        display: flex;
+        height: 24px;
+        align-items: center;
+      }
+    }
+
+    .newTagBtn {
+      background-color: '#fff';
+      border-style: dashed;
+    }
+  }
+}
