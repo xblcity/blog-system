@@ -33,7 +33,7 @@ module.exports = {
       '@store': resolve('src/store'),
       '@services': resolve('src/services'),
       '@utils': resolve('src/utils'),
-      '@contants': resolve('src/contants')
+      '@constants': resolve('src/constants')
     }
   },
   module: {

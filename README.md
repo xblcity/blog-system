@@ -165,3 +165,12 @@ git 提交 message 规范
 npm i -D @commitlint/cli
 npm i -D @commitlint/config-conventional
 ```
+
+## 项目过程中
+
+安装`moment jwt-decode marked highlight xss`
+```js
+npm i moment jwt-decode marked highlight -S  
+npm i @types/jwt-decode @types/highlight.js @types/marked -D
+``` 
+> moment事件格式化，jwt-decode对jwt进行解码

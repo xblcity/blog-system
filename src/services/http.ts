@@ -16,7 +16,7 @@ interface HttpRequest {
 type Method = 'get' | 'post' | 'delete' | 'put'
 const methods: Method[] = ['get', 'post', 'delete', 'put']
 const http: HttpRequest = {}
-const appEnv: string = process.env.APP_ENV
+const appEnv: string = process.env.NODE_ENV
 
 const DEFAULTBASEURL = {
   baseURL: baseUrls[appEnv].BASE_URL
