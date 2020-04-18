@@ -24,6 +24,21 @@ const Tags = lazy(() =>
 const TagWithArticle = lazy(() =>
   import(/* webpackChunkName: "article-list" */ '@views/TagWithArticle'))
 
+const Login = lazy(() => import(/* webpackChunkName: "login" */ '@views/Login'))
+
+const Admin = lazy(() => import(/* webpackChunkName: "admin" */ '@views/Admin'))
+
+const AddArticle = lazy(() =>
+  import(/* webpackChunkName: "add-article" */ '@views/Admin/AddArticle'))
+
+const ArticleManager = lazy(() =>
+  // eslint-disable-next-line function-paren-newline
+  import(
+    /* webpackChunkName: "article-manager" */ '@views/Admin/ArticleManager'))
+
+const UserManager = lazy(() =>
+  import(/* webpackChunkName: "user-manager" */ '@views/Admin/UserManager'))
+
 export const homeMenu: RouterMenuItem = {
   path: '/',
   component: BlogLayout,
@@ -57,7 +72,37 @@ export const homeMenu: RouterMenuItem = {
   ]
 }
 
-const  menu: RouterMenuItem[] = [
+export const adminMenu: RouterMenuItem = {
+  path: 'admin',
+  component: Admin,
+  children: [
+    {
+      path: '',
+      title: '文章管理',
+      component: ArticleManager,
+      icon: 'home'
+    },
+    {
+      path: 'add',
+      title: '添加文章',
+      component: AddArticle,
+      icon: 'edit'
+    },
+    {
+      path: 'user',
+      title: '用户管理',
+      component: UserManager,
+      icon: 'user'
+    }
+  ]
+}
+
+const menu: RouterMenuItem[] = [
+  {
+    path: 'login',
+    component: Login
+  },
+  adminMenu,
   homeMenu
 ]
 

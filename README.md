@@ -168,9 +168,19 @@ npm i -D @commitlint/config-conventional
 
 ## 项目过程中
 
+前台展示
+
 安装`moment jwt-decode marked highlight xss`
 ```js
 npm i moment jwt-decode marked highlight -S  
 npm i @types/jwt-decode @types/highlight.js @types/marked -D
 ``` 
 > moment事件格式化，jwt-decode对jwt进行解码
+
+后台管理
+
+安装`react-codemirror2`
+
+```js
+npm i react-codemirror2 -S  
+```

@@ -9,6 +9,11 @@ interface IProps {
   height?: number
 }
 
+/**
+ * 因为引入了iconfont的js脚本
+ * 所以在此处直接使用icont的id即可显示对应的icon图标
+ * @param param0 {}
+ */
 const Icon: React.FC<IProps> = ({
   className,
   onClick,

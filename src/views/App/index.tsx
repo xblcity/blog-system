@@ -5,7 +5,7 @@ import jwtDecode from 'jwt-decode'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
-import menu from './routerMap'
+import menu from './routerMap' // 路由list
 import { useUserStore, useTagStore } from '@store/index'
 import { getTagList as getTagListApi } from '@services/api'
 import { RouterMenuItem } from './routerMap' // ts interface

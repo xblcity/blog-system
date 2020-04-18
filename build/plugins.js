@@ -7,6 +7,7 @@ const { ICONFONT_SRC_URL, HIGHLIGHT_SRC_URL } = require('./constants')
 module.exports = [
   new HtmlWebpackPlugin({
     template: 'build/tpl/index.html', // 注意路径绝对路径
+    favicon: 'build/tpl/favicon.ico',
     templateParameters: {
       iconfontSrcUrl: ICONFONT_SRC_URL,
       hightlightSrcUrl: HIGHLIGHT_SRC_URL
