@@ -179,8 +179,10 @@ npm i @types/jwt-decode @types/highlight.js @types/marked -D
 
 后台管理
 
-安装`react-codemirror2`
+安装` codemirror react-codemirror2`
 
 ```js
-npm i react-codemirror2 -S  
+npm i react-codemirror2 codemirror -S
+npm i @types/codemirror -D 
 ```
+> react-codemirror2 文本编辑 @types/codemirror 因为要使用到上面的接口

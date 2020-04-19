@@ -33,8 +33,7 @@ const AddArticle = lazy(() =>
 
 const ArticleManager = lazy(() =>
   // eslint-disable-next-line function-paren-newline
-  import(
-    /* webpackChunkName: "article-manager" */ '@views/Admin/ArticleManager'))
+  import(/* webpackChunkName: "article-manager" */ '@views/Admin/ArticleManager'))
 
 const UserManager = lazy(() =>
   import(/* webpackChunkName: "user-manager" */ '@views/Admin/UserManager'))
@@ -73,7 +72,7 @@ export const homeMenu: RouterMenuItem = {
 }
 
 export const adminMenu: RouterMenuItem = {
-  path: 'admin',
+  path: '/admin',
   component: Admin,
   children: [
     {

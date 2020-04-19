@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { Input, Tag, Icon } from 'antd'
 
-import styles from './../index.scss'
+import styles from '../../index.scss'
 
 const { CheckableTag } = Tag
 

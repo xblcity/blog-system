@@ -17,7 +17,8 @@ module.exports = {
   output: {
     path: resolve('dist'),
     filename: isDev ? '[name].js' : '[name].[chunkhash:4].js', // 添加hash，解决浏览器缓存问题   开发的时候不需要hash值
-    chunkFilename: isDev ? '[name].js' : '[name].[chunkhash:4].js' // 模块包的名字，比如page-a,添加hash，解决浏览器缓存问题
+    chunkFilename: isDev ? '[name].js' : '[name].[chunkhash:4].js', // 模块包的名字，比如page-a,添加hash，解决浏览器缓存问题
+    publicPath: '/'
   },
   mode: process.env.NODE_ENV,
   devtool: isDev ? 'source-map' : undefined, // 生产环境不需要source-map
