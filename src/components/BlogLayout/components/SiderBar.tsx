@@ -3,7 +3,7 @@ import { Icon as AntdIcon, Divider, Tag } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import styles from './index.scss'
-import Icon from '@components/Icon'
+// import Icon from '@components/Icon'
 import { ArticleItem } from '@views/ArticleList/ArticleItem'
 import { useTagStore } from '@store/index'
 import { useGetListData } from '@utils/hooks'
