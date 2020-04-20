@@ -25,7 +25,7 @@ const Icon: React.FC<IProps> = ({
   return (
     <span onClick={onClick} className={className}>
       <svg className="icon" style={{ fill: color, width, height }}>
-        <use xlinkHref={`#icon-${id}`} />
+        <use xlinkHref={`#icon${id}`} />
       </svg>
     </span>
   )
