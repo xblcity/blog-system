@@ -1,6 +1,6 @@
 const { resolve } = require('../utils')
 const { cacheLoader, threadLoader } = require('../loaders')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin').loader
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const { IS_DEV } = require('./../constants')
 

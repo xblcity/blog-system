@@ -16,7 +16,7 @@
       // "outFile": "./",                       /* Concatenate and emit output to single file. */
       "outDir": "dist",
       /* Redirect output structure to the directory. */
-      "rootDir": "./",
+      // "rootDir": "./",
       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
       // "composite": true,                     /* Enable project compilation */
       // "tsBuildInfoFile": "./",               /* Specify file to store incremental compilation information */
@@ -72,5 +72,8 @@
       "emitDecoratorMetadata": true,
       /* Enables experimental support for emitting type metadata for decorators. */
    },
-   "exclude": ["node_modules"]
+   "exclude": ["node_modules"],
+   "include": [
+      "src/**/*"
+  ],
 }
