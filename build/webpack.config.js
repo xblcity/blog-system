@@ -2,6 +2,7 @@ const { resolve } = require('./utils')
 const jsRules = require('./rules/jsRules')
 const plugins = require('./plugins')
 const styleRules = require('./rules/styleRules')
+const fileRules = require('./rules/fileRules')
 const optimization = require('./optimization')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -38,7 +39,7 @@ module.exports = {
     }
   },
   module: {
-    rules: [...jsRules, ...styleRules]
+    rules: [...jsRules, ...styleRules, ...fileRules]
   },
   plugins: [...plugins],
   optimization: isDev ? {} : optimization // 开发的时候不需要优化打包和压缩代码
