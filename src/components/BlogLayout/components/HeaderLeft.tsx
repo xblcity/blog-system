@@ -31,13 +31,8 @@ const HeaderLeft = ({ history }: RouteComponentProps) => {
   // 渲染标题以及nav链接
   return (
     <div className={styles.headLeft}>
-      <div className={styles.title}>
-        <Icon
-          className={styles.icon}
-          width={20}
-          height={20}
-          id="bokezhuanjia"
-        />
+      <div className={styles.title} onClick={() => history.push('/')}>
+        <Icon className={styles.icon} width={20} height={20} id="boke1" />
         小白龙的博客
       </div>
       <Dropdown

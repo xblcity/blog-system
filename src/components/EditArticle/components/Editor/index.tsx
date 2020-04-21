@@ -4,6 +4,8 @@ import classnames from 'classnames'
 import styles from './index.scss'
 import { markdownToHtml } from '@utils/index'
 
+import CodeMirror from '../CodeMirror'
+
 interface IProps {
   className?: string
   value: string
@@ -15,9 +17,9 @@ const Editor = ({ className, value, onChange }: IProps) => {
 
   return (
     <div className={classnames(styles.editorWrapper, className)}>
-      {/* <div className={styles.editorPane}>
+      <div className={styles.editorPane}>
         <CodeMirror onChangeInput={onChange} value={value} />
-      </div> */}
+      </div>
       <div className={classnames(styles.editResult, styles.markdown)}>
         <div dangerouslySetInnerHTML={{ __html: markdownText }} />
       </div>

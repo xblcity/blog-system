@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "dev": "nodemon ./src/index.ts",
-        "build": "rm -rf dist && tsc",
+        "build": "tsc",
+        "pro": "pm2 ./dist/index.js ",
         "lint": "eslint src --ext .ts,.tsx"
     },
     "keywords": [],
