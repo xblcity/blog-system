@@ -16,13 +16,12 @@ export interface RouterMenuItem {
 const ArticleList = lazy(() =>
   import(/* webpackChunkName: "article-list" */ '@views/ArticleList'))
 const ArticleDetail = lazy(() =>
-  import(/* webpackChunkName: "article-list" */ '@views/ArticleDetail'))
+  import(/* webpackChunkName: "article-detail" */ '@views/ArticleDetail'))
 const AboutMe = lazy(() =>
-  import(/* webpackChunkName: "article-list" */ '@views/AboutMe'))
-const Tags = lazy(() =>
-  import(/* webpackChunkName: "article-list" */ '@views/Tags'))
+  import(/* webpackChunkName: "about-me" */ '@views/AboutMe'))
+const Tags = lazy(() => import(/* webpackChunkName: "tags" */ '@views/Tags'))
 const TagWithArticle = lazy(() =>
-  import(/* webpackChunkName: "article-list" */ '@views/TagWithArticle'))
+  import(/* webpackChunkName: "tag-with-acticle" */ '@views/TagWithArticle'))
 
 const Login = lazy(() => import(/* webpackChunkName: "login" */ '@views/Login'))
 
@@ -33,7 +32,8 @@ const AddArticle = lazy(() =>
 
 const ArticleManager = lazy(() =>
   // eslint-disable-next-line function-paren-newline
-  import(/* webpackChunkName: "article-manager" */ '@views/Admin/ArticleManager'))
+  import(
+    /* webpackChunkName: "article-manager" */ '@views/Admin/ArticleManager'))
 
 const UserManager = lazy(() =>
   import(/* webpackChunkName: "user-manager" */ '@views/Admin/UserManager'))
@@ -98,7 +98,7 @@ export const adminMenu: RouterMenuItem = {
 
 const menu: RouterMenuItem[] = [
   {
-    path: 'login',
+    path: '/login',
     component: Login
   },
   adminMenu,

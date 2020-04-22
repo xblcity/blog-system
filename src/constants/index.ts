@@ -4,5 +4,6 @@ export const baseUrls: PlainObj = {
   },
   production: {
     BASE_URL: 'https://blogc.xblcity.com/api'
+    // BASE_URL: 'http://localhost:3001/api'
   }
 }

@@ -17,8 +17,10 @@ module.exports = {
   },
   output: {
     path: resolve('dist'),
-    filename: isDev ? '[name].js' : '[name].[chunkhash:4].js', // 添加hash，解决浏览器缓存问题   开发的时候不需要hash值
-    chunkFilename: isDev ? '[name].js' : '[name].[chunkhash:4].js', // 模块包的名字，比如page-a,添加hash，解决浏览器缓存问题
+    filename: isDev ? '[name].[chunkhash].js' : '[name].[chunkhash].js', // 添加hash，解决浏览器缓存问题   开发的时候不需要hash值
+    chunkFilename: isDev
+      ? '[name].[chunkhash].js'
+      : '[name].[id].[chunkhash].js', // 模块包的名字，比如page-a,添加hash，解决浏览器缓存问题
     publicPath: '/'
   },
   mode: process.env.NODE_ENV,
@@ -37,6 +39,10 @@ module.exports = {
       '@utils': resolve('src/utils'),
       '@constants': resolve('src/constants')
     }
+  },
+  externals: {
+    highlight: 'hljs',
+    moment: 'moment'
   },
   module: {
     rules: [...jsRules, ...styleRules, ...fileRules]

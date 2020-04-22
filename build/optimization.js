@@ -19,12 +19,24 @@ module.exports = {
         chunks: 'all',
         priority: 9
       },
-      vendors: {
-        name: 'vendor',
-        test: /[\\/]node_modules[\\/](moment|axios)[\\/]/,
+      react: {
+        name: 'react',
+        test: /[\\/]node_modules[\\/](react)[\\/]/,
         chunks: 'all',
-        priority: 10
+        priority: 9
+      },
+      '@ant-design': {
+        name: '@ant-design',
+        test: /[\\/]node_modules[\\/](@ant-design)[\\/]/,
+        chunks: 'all',
+        priority: 9
       }
+      // vendors: {
+      //   name: 'vendor',
+      //   test: /[\\/]node_modules[\\/](moment|axios)[\\/]/,
+      //   chunks: 'all',
+      //   priority: 10
+      // }
     }
   },
   minimizer: [
