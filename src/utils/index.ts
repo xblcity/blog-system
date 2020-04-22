@@ -1,5 +1,5 @@
 import marked from 'marked'
-import hljs from 'highlight.js'
+import hljs from 'highlight'
 import { filterXSS } from 'xss'
 import { message } from 'antd'
 
