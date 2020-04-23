@@ -10,7 +10,7 @@ import UserInfo from './UserInfo'
 const Header = Layout.Header
 
 const BlogHeader = () => {
-  console.log(styles)
+  // console.log(styles)
   const responsiveLeft = { xxl: 4, xl: 5, lg: 5, sm: 4, xs: 24 }
   return (
     <Header className={styles.headerContainer}>

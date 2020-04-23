@@ -105,6 +105,7 @@
 
       .item {
         display: flex;
+        align-items: center;
         margin-right: 5px;
 
         .icon {
@@ -121,6 +122,7 @@
 
     .tagContainer {
       display: flex;
+      align-items: center;
 
       .tagIcon {
         display: flex;

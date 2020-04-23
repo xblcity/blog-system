@@ -21,7 +21,7 @@ const Search = ({ history, location }: RouteComponentProps) => {
   return (
     <Row className={styles.searchBox}>
       <Col>
-        <Row>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
           <Icon className={styles.antion} id="cx" />
           <Input
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -32,7 +32,7 @@ const Search = ({ history, location }: RouteComponentProps) => {
             placeholder="搜索文章标题"
             onPressEnter={searchArticle}
           />
-        </Row>
+        </div>
       </Col>
     </Row>
   )

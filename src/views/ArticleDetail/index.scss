@@ -29,6 +29,7 @@
 
           .tags {
             display: flex;
+            align-items: center;
 
             .tagIcon {
               display: flex;
@@ -42,6 +43,7 @@
 
             .item {
               display: flex;
+              align-items: center;
               margin-right: 5px;
 
               .icon {

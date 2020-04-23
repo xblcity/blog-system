@@ -23,8 +23,10 @@ const HeaderLeft = ({ history }: RouteComponentProps) => {
             className={styles.mobileMenuItem}
             key={item.path}
           >
-            <Icon className={styles.menuIcon} id={item.icon} />
-            {item.title}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Icon className={styles.menuIcon} id={item.icon} />
+              {item.title}
+            </div>
           </MenuItem>
         ))}
       </Menu>
