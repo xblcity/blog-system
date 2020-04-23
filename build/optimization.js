@@ -19,12 +19,12 @@ module.exports = {
         chunks: 'all',
         priority: 9
       },
-      react: {
-        name: 'react',
-        test: /[\\/]node_modules[\\/](react)[\\/]/,
-        chunks: 'all',
-        priority: 9
-      },
+      // react: {
+      //   name: 'react',
+      //   test: /[\\/]node_modules[\\/](react)[\\/]/,
+      //   chunks: 'all',
+      //   priority: 9
+      // },
       '@ant-design': {
         name: '@ant-design',
         test: /[\\/]node_modules[\\/](@ant-design)[\\/]/,

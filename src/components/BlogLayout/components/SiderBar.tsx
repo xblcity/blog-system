@@ -1,9 +1,9 @@
 import React from 'react'
-import { Icon as AntdIcon, Divider, Tag } from 'antd'
+import { Divider, Tag } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import styles from './index.scss'
-// import Icon from '@components/Icon'
+import Icon from '@components/Icon'
 import { ArticleItem } from '@views/ArticleList/ArticleItem'
 import { useTagStore } from '@store/index'
 import { useGetListData } from '@utils/hooks'
@@ -38,7 +38,7 @@ const SiderBar = ({ history }: RouteComponentProps) => {
       <h5 className={styles.desc}>一个进击的前端</h5>
       <div className={styles.link}>
         <div className={styles.linkItem}>
-          <AntdIcon type="github" theme="filled" className={styles.linkIcon} />
+          <Icon id="GitHub" className={styles.linkIcon} />
           <a
             target="_blank"
             rel="noreferrer noopener"

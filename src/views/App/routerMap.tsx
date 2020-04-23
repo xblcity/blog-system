@@ -46,7 +46,7 @@ export const homeMenu: RouterMenuItem = {
       path: '/',
       title: '首页',
       component: ArticleList,
-      icon: 'home'
+      icon: 'shouye'
     },
     {
       path: '/tag',
@@ -79,7 +79,7 @@ export const adminMenu: RouterMenuItem = {
       path: '',
       title: '文章管理',
       component: ArticleManager,
-      icon: 'home'
+      icon: 'shouye'
     },
     {
       path: 'add',

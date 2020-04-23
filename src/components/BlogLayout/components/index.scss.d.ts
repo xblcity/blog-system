@@ -24,7 +24,9 @@ interface CssExports {
   'mainWrapper': string;
   'menu': string;
   'menuIcon': string;
+  'menuInner': string;
   'menuItem': string;
+  'menuText': string;
   'mobileMenu': string;
   'mobileMenuItem': string;
   'rightCol': string;

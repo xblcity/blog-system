@@ -88,8 +88,8 @@ const App = () => {
   }
   const routesNode = renderRoutes(menu, '/')
 
-  console.log(11111, routesNode)
-  console.log(222222, menu)
+  // console.log(11111, routesNode)
+  // console.log(222222, menu)
 
   return (
     <Suspense fallback={<PageLoading />}>

@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Modal, Form, Input, Button, Icon, message } from 'antd'
+import { Modal, Form, Input, Button, message } from 'antd'
 import { ModalProps } from 'antd/lib/modal'
-import { FormComponentProps } from 'antd/lib/form'
+// import { FormComponentProps } from 'antd/lib/form'
+import Icon from '@components/Icon'
 
 import { register, login } from '@services/api'
 import { useUserStore } from '@store/index'
@@ -12,7 +13,15 @@ const api = { register, login }
 
 const FormItem = Form.Item
 
-interface IProps extends FormComponentProps, ModalProps {
+// interface IProps extends FormComponentProps, ModalProps {
+//   authModalType: 'login' | 'register'
+//   closeModal: () => void
+//   triggerAuthModal: (visible: boolean, type?: AuthModalType) => void
+// }
+
+// antd4 表单
+
+interface IProps extends ModalProps {
   authModalType: 'login' | 'register'
   closeModal: () => void
   triggerAuthModal: (visible: boolean, type?: AuthModalType) => void
@@ -20,40 +29,58 @@ interface IProps extends FormComponentProps, ModalProps {
 
 const AuthModal = ({
   visible,
-  form,
   authModalType,
   closeModal,
   triggerAuthModal
 }: IProps) => {
-  const { getFieldDecorator, validateFields } = form
+  // const { getFieldDecorator, validateFields } = form
   const { dispatch: userDispatch } = useUserStore()
 
   const [loading, setLoading] = useState<boolean>(false)
 
-  const submit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  // const submit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault()
+  //   setLoading(true)
+  //   validateFields(async (err, value) => {
+  //     if (!err) {
+  //       setLoading(true)
+  //       try {
+  //         const res = await api[authModalType](value)
+  //         if (res) {
+  //           setLoading(false)
+  //           triggerAuthModal(false)
+  //           if (authModalType === 'login') {
+  //             userDispatch({ type: 'USER_LOGIN', payload: res.data })
+  //             localStorage.setItem('token', res.data.token)
+  //             message.success('登陆成功')
+  //           } else {
+  //             message.success('注册成功')
+  //           }
+  //         }
+  //       } catch (error) {
+  //         setLoading(false)
+  //       }
+  //     }
+  //   })
+
+  const submit = async (values: any) => {
     setLoading(true)
-    validateFields(async (err, value) => {
-      if (!err) {
-        setLoading(true)
-        try {
-          const res = await api[authModalType](value)
-          if (res) {
-            setLoading(false)
-            triggerAuthModal(false)
-            if (authModalType === 'login') {
-              userDispatch({ type: 'USER_LOGIN', payload: res.data })
-              localStorage.setItem('token', res.data.token)
-              message.success('登陆成功')
-            } else {
-              message.success('注册成功')
-            }
-          }
-        } catch (error) {
-          setLoading(false)
+    try {
+      const res = await api[authModalType](values)
+      if (res) {
+        setLoading(false)
+        triggerAuthModal(false)
+        if (authModalType === 'login') {
+          userDispatch({ type: 'USER_LOGIN', payload: res.data })
+          localStorage.setItem('token', res.data.token)
+          message.success('登陆成功')
+        } else {
+          message.success('注册成功')
         }
       }
-    })
+    } catch (error) {
+      setLoading(false)
+    }
   }
 
   /* eslint-disable */
@@ -67,37 +94,19 @@ const AuthModal = ({
       title={authModalType}
       visible={visible}
     >
-      <Form onSubmit={submit} layout="horizontal">
-        <FormItem hasFeedback>
-          {getFieldDecorator('username', {
-            rules: [
-              {
-                required: true,
-                message: '需要输入用户名'
-              }
-            ]
-          })(
+      <Form onFinish={submit} layout="horizontal">
+        <FormItem  name="username" rules={[{ required: true, message: '需要输入用户名' }]}>
             <Input
-              prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              prefix={<Icon id="user" />}
               placeholder="请输入用户名"
             />
-          )}
         </FormItem>
-        <FormItem hasFeedback>
-          {getFieldDecorator('password', {
-            rules: [
-              {
-                required: true,
-                message: '需要输入密码'
-              }
-            ]
-          })(
+        <FormItem name="password" rules={[{ required: true, message: '需要输入密码' }]} >
             <Input
               type="password"
               placeholder="请输入密码"
-              prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+              prefix={<Icon id="set_lock_hov" />}
             />
-          )}
         </FormItem>
         <FormItem>
           <Button loading={loading} type="primary" htmlType="submit" block>
@@ -109,4 +118,4 @@ const AuthModal = ({
   )
 }
 
-export default Form.create<IProps>()(AuthModal)
+export default AuthModal
