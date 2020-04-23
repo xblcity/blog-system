@@ -45,8 +45,16 @@
     }
 
     .newTagBtn {
+      display: flex;
+      align-items: center;
       background-color: '#fff';
       border-style: dashed;
+      .tagIcon {
+        display: flex;
+        width: 14px;
+        height: 14px;
+        font-size: 14px;
+      }
     }
   }
 }

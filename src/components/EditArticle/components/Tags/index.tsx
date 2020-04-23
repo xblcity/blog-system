@@ -79,8 +79,12 @@ const Tags = ({
       />
       {!inputVisible && (
         <Tag onClick={showInput} className={styles.newTagBtn}>
-          <Icon id="plus" />
-          New Tag
+          <Icon
+            id="plus"
+            style={{ width: '14px', height: '14px' }}
+            className={styles.tagIcon}
+          />
+          &nbsp;New Tag
         </Tag>
       )}
     </div>

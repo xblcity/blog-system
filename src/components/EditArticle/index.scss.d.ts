@@ -7,6 +7,7 @@ interface CssExports {
   'label': string;
   'newTagBtn': string;
   'setInfo': string;
+  'tagIcon': string;
   'tags': string;
   'titleInput': string;
 }

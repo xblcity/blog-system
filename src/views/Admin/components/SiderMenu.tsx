@@ -13,9 +13,11 @@ const SiderMenu = ({ history }: RouteComponentProps) => {
     return adminMenu.children.map(item => {
       return (
         <MenuItem key={item.path ? `/admin/${item.path}` : '/admin'}>
-          <div style={{ display: 'flex' }}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
             {item.icon && <Icon id={item.icon} />}
-            <span>{item.title}</span>
+            <span style={{ display: 'block', marginLeft: '8px' }}>
+              {item.title}
+            </span>
           </div>
         </MenuItem>
       )
