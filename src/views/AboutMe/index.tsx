@@ -1,8 +1,8 @@
 import React from 'react'
-import { Avatar, Divider, Icon as AntdIcon, Rate } from 'antd'
+import { Avatar, Divider, Rate } from 'antd'
 
 import styles from './index.scss'
-// import Icon from '@components/Icon'
+import Icon from '@components/Icon'
 
 const skillList: { title: string; rate: number }[] = [
   {
@@ -20,7 +20,7 @@ const skillList: { title: string; rate: number }[] = [
   },
   {
     title: 'Webpack: 能够从零配置React开发环境并应用与优化。',
-    rate: 3
+    rate: 2
   },
   {
     title: 'TypeScript: 掌握TypeScript通常用法，并运用与实际开发中',
@@ -54,10 +54,12 @@ const AboutMe = () => {
       <Divider orientation="left">关于我</Divider>
       <ul className={styles.myInfo}>
         <li>姓名：小白龙</li>
-        <li>
+        <li style={{ display: 'flex' }}>
           联系方式：
-          <AntdIcon style={{ marginRight: 6 }} type="mail" />
-          <a href="mailto:hyaxie@163.com">hyaxie@163.com</a>
+          <Icon style={{ width: '20px', height: '20px' }} id="mail" />
+          <a href="mailto:hyaxie@163.com" style={{ marginLeft: '5px' }}>
+            hyaxie@163.com
+          </a>
         </li>
         <li>地址：苏州市</li>
         <li>

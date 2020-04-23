@@ -1,8 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const DefinePlugin = require('webpack').DefinePlugin
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-//   .BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 
 const {
   ICONFONT_SRC_URL,
@@ -30,6 +30,6 @@ module.exports = [
   }),
   new DefinePlugin({
     'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-  })
-  // new BundleAnalyzerPlugin()
+  }),
+  new BundleAnalyzerPlugin()
 ]

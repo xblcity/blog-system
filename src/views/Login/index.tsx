@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Button, Icon as IconAntd, message } from 'antd'
+import { Input, Button, message } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 
 import styles from './index.scss'
@@ -35,7 +35,7 @@ const Login = ({ history }: RouteComponentProps) => {
         <Icon color="#00b7f2" className={styles.loginIcon} id="React" />
         <Input
           size="large"
-          prefix={<IconAntd type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          prefix={<Icon id="user" />}
           name="username"
           placeholder="请输入用户名"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
@@ -45,7 +45,7 @@ const Login = ({ history }: RouteComponentProps) => {
         />
         <Input
           size="large"
-          prefix={<IconAntd type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
+          prefix={<Icon id="set_lock_hov" />}
           name="password"
           placeholder="请输入密码"
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>

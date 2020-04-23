@@ -6,11 +6,11 @@ import {
   Input,
   Button,
   message,
-  Icon,
   Popconfirm
 } from 'antd'
 import moment from 'moment'
 import classnames from 'classnames'
+import Icon from '@components/Icon'
 
 import { CommentItem, ReplyItem } from '@views/ArticleList/ArticleItem' // interface
 import styles from './index.scss'
@@ -132,7 +132,7 @@ const DiscussItem: React.FC<IProps> = ({
               okText="确认"
               title={`是否删除该${isReply ? '回复' : '评论'}`}
             >
-              <Icon style={{ cursor: 'pointer', color: 'red' }} type="delete" />
+              <Icon id="template_delete" />
             </Popconfirm>
           )}
         </>

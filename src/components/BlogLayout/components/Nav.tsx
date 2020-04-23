@@ -1,6 +1,7 @@
 import React from 'react'
-import { Menu, Icon } from 'antd'
+import { Menu } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import Icon from '@components/Icon'
 
 import styles from './index.scss'
 import { homeMenu } from '@views/App/routerMap'
@@ -31,8 +32,10 @@ const Nav = ({ history, location }: RouteComponentProps) => {
               onClick={goto}
               key={item.path}
             >
-              {!!item.icon && <Icon type={item.icon} />}
-              <span>{item.title}</span>
+              <div className={styles.menuInner}>
+                {!!item.icon && <Icon id={item.icon} />}
+                <span className={styles.menuText}>{item.title}</span>
+              </div>
             </MenuItem>
           )
         )

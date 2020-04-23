@@ -1,4 +1,6 @@
 import React from 'react'
+import styles from './index.scss'
+import classnames from 'classnames'
 
 interface IProps {
   className?: string
@@ -7,6 +9,7 @@ interface IProps {
   color?: string
   width?: number
   height?: number
+  style?: any
 }
 
 /**
@@ -20,11 +23,12 @@ const Icon: React.FC<IProps> = ({
   id,
   color,
   width,
-  height
+  height,
+  style = { width: '17px', height: '17px' }
 }) => {
   return (
-    <span onClick={onClick} className={className}>
-      <svg className="icon" style={{ fill: color, width, height }}>
+    <span onClick={onClick} className={classnames(styles.iconBox, className)}>
+      <svg className="icon" style={{ fill: color, width, height, ...style }}>
         <use xlinkHref={`#icon${id}`} />
       </svg>
     </span>

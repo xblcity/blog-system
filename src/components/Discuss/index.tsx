@@ -1,14 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react'
-import {
-  Dropdown,
-  Menu,
-  Icon,
-  Comment,
-  Input,
-  Button,
-  message,
-  Avatar
-} from 'antd'
+import { Dropdown, Menu, Comment, Input, Button, message, Avatar } from 'antd'
+import Icon from '@components/Icon'
 
 import styles from './index.scss'
 import { useUserStore } from '@store/index'
@@ -144,9 +136,9 @@ const Discuess = ({ articleData }: IProps) => {
             placement="bottomCenter"
             overlay={renderMenu()}
           >
-            <div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
               {!!userInfo ? userInfo.username : '未登录用户'}
-              <Icon type="down" className={styles.userSelectIcon} />
+              <Icon id="down" className={styles.userSelectIcon} />
             </div>
           </Dropdown>
         </div>
@@ -159,11 +151,7 @@ const Discuess = ({ articleData }: IProps) => {
                 {userInfo.username}
               </Avatar>
             ) : (
-              <Icon
-                className={styles.defaultAvatar}
-                type="github"
-                theme="filled"
-              />
+              <Icon className={styles.defaultAvatar} id="GitHub" />
             )
           }
           content={

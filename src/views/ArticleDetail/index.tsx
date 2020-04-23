@@ -1,7 +1,7 @@
 import React, { useEffect, useState, memo } from 'react'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
 import classnames from 'classnames'
-import { Divider, Drawer, Icon as AntdIcon } from 'antd'
+import { Divider, Drawer } from 'antd'
 
 import { getArticleById } from '@services/api'
 import styles from './index.scss'
@@ -135,7 +135,7 @@ const ArticleDetail = ({ match }: RouteComponentProps<{ id: string }>) => {
             onClick={() => setIsShowTitleListDrawer(true)}
             className={styles.mobileDrawerBtn}
           >
-            <AntdIcon type="menu-o" />
+            <Icon id="menu-o" />
           </div>
           <Drawer
             className={styles.mobileDrawer}

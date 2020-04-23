@@ -1,6 +1,8 @@
 import React from 'react'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
-import { Dropdown, Icon as AntdIcon, Menu } from 'antd'
+// import { Dropdown, Icon as AntdIcon, Menu } from 'antd'
+import { Dropdown, Menu } from 'antd'
+// import { Dropdown, Icon as AntdIcon, Menu } from 'antd'
 
 import styles from './index.scss'
 import Icon from '@components/Icon'
@@ -21,7 +23,7 @@ const HeaderLeft = ({ history }: RouteComponentProps) => {
             className={styles.mobileMenuItem}
             key={item.path}
           >
-            <AntdIcon className={styles.menuIcon} type={item.icon} />
+            <Icon className={styles.menuIcon} id={item.icon} />
             {item.title}
           </MenuItem>
         ))}
@@ -41,7 +43,7 @@ const HeaderLeft = ({ history }: RouteComponentProps) => {
         overlay={renderMenu()}
         overlayClassName={styles.mobileMenu}
       >
-        <AntdIcon type="menu" className={styles.drowDownIcon} />
+        <Icon id="enabled" className={styles.drowDownIcon} />
       </Dropdown>
     </div>
   )

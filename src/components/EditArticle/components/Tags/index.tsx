@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
-import { Input, Tag, Icon } from 'antd'
+import { Input, Tag } from 'antd'
+import Icon from '@components/Icon'
 
 import styles from '../../index.scss'
 
@@ -78,7 +79,7 @@ const Tags = ({
       />
       {!inputVisible && (
         <Tag onClick={showInput} className={styles.newTagBtn}>
-          <Icon type="plus" />
+          <Icon id="plus" />
           New Tag
         </Tag>
       )}

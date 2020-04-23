@@ -18,7 +18,7 @@ const BlogHeader = () => {
         <Col {...responsiveLeft}>
           <HeaderLeft />
         </Col>
-        <Col>
+        <Col flex="auto">
           <Search />
           <UserInfo />
           <Nav />

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Pagination, Empty, Icon, Drawer } from 'antd'
+import { Pagination, Empty, Drawer } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import Icon from '@components/Icon'
 
 import styles from './index.scss'
 import PageLoading from '@components/PageLoading'
@@ -121,7 +122,7 @@ const ArticleList = ({ history, location }: RouteComponentProps) => {
             onClick={() => setIsShowTitleListDrawer(true)}
             className={styles.mobileDrawerBtn}
           >
-            <Icon type="menu-o" />
+            <Icon id="menu-o" />
           </div>
           <Drawer
             className={styles.mobileDrawer}

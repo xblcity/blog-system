@@ -1,6 +1,7 @@
 import React from 'react'
-import { Menu, Icon } from 'antd'
+import { Menu } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import Icon from '@components/Icon'
 
 import { adminMenu } from '@views/App/routerMap' // admin路由
 
@@ -12,8 +13,10 @@ const SiderMenu = ({ history }: RouteComponentProps) => {
     return adminMenu.children.map(item => {
       return (
         <MenuItem key={item.path ? `/admin/${item.path}` : '/admin'}>
-          {item.icon && <Icon type={item.icon} />}
-          <span>{item.title}</span>
+          <div style={{ display: 'flex' }}>
+            {item.icon && <Icon id={item.icon} />}
+            <span>{item.title}</span>
+          </div>
         </MenuItem>
       )
     })

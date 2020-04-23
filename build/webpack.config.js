@@ -42,7 +42,9 @@ module.exports = {
   },
   externals: {
     highlight: 'hljs',
-    moment: 'moment'
+    moment: 'moment',
+    react: 'React',
+    'react-dom': 'ReactDOM'
   },
   module: {
     rules: [...jsRules, ...styleRules, ...fileRules]

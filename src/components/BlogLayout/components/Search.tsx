@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Input, Icon, Row, Col } from 'antd'
+import { Input, Row, Col } from 'antd'
 import { withRouter, RouteComponentProps } from 'react-router-dom'
+import Icon from '@components/Icon'
 
 import styles from './index.scss'
 import { decodeQuery } from '@utils/index'
@@ -20,16 +21,18 @@ const Search = ({ history, location }: RouteComponentProps) => {
   return (
     <Row className={styles.searchBox}>
       <Col>
-        <Icon className={styles.antion} type="search" />
-        <Input
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-            setKeyword(e.target.value)
-          }
-          value={keyword}
-          className={styles.headerSearch}
-          placeholder="搜索文章标题"
-          onPressEnter={searchArticle}
-        />
+        <Row>
+          <Icon className={styles.antion} id="cx" />
+          <Input
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setKeyword(e.target.value)
+            }
+            value={keyword}
+            className={styles.headerSearch}
+            placeholder="搜索文章标题"
+            onPressEnter={searchArticle}
+          />
+        </Row>
       </Col>
     </Row>
   )

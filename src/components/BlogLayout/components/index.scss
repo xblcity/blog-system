@@ -115,6 +115,13 @@
       min-width: 72px;
       border-top: 2px solid transparent;
       border-bottom: unset;
+      .menuInner {
+        display: flex;
+        .menuText {
+          display: inline-block;
+          margin-left: 3px;
+        }
+      }
 
       &:hover {
         border-bottom: unset;
@@ -247,7 +254,7 @@
       font-size: 20px !important;
 
       .drowDownIcon {
-        display: block;
+        display: flex;
         position: absolute;
         font-size: 14px;
         right: 20px;
