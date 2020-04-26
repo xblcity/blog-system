@@ -4,6 +4,33 @@
   padding: 0 30px;
   flex: 1;
 
+  :global {
+    .ant-anchor-link {
+      > .ant-anchor-link-title {
+        margin-bottom: 2px;
+        font-size: 15px;
+        // font-weight: bold;
+      }
+
+      > .ant-anchor-link {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        > .ant-anchor-link-title {
+          margin-bottom: 2px;
+          font-size: 13px;
+          > .ant-anchor-link {
+            padding-top: 2px;
+            padding-bottom: 2px;
+            > .ant-anchor-link-title {
+              margin-bottom: 2px;
+              font-size: 13px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .detailContainer {
     display: flex;
     margin-right: 260px;
@@ -72,6 +99,7 @@
       position: fixed;
       width: 260px;
       right: 15px;
+      top: 80px;
     }
   }
 }
