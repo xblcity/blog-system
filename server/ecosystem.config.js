@@ -2,8 +2,8 @@
 module.exports = {
     apps: [
         {
-            name: 'prod',
-            script: './dist/src/index.js',
+            name: 'blog-system',
+            script: './dist/index.js',
             env: {
                 NODE_ENV: 'prod'
             },
