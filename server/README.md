@@ -119,6 +119,18 @@ ts-node
 
 默认运行在3001端口
 
+## 项目启动
+
+```js
+yarn dev
+```
+
+## 项目构建
+
+```js
+yarn build
+```
+
 ## 参考
 
 - [oxc-blog-server](https://github.com/hungeroxc/oxc-blog-server)

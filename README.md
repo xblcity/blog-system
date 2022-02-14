@@ -187,3 +187,9 @@ npm i @types/codemirror -D
 ```
 > react-codemirror2 文本编辑 @types/codemirror 因为要使用到上面的接口
 > 有些type 没用到，所以没装
+
+## 项目启动
+
+```js
+yarn dev
+```
